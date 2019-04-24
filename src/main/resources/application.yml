@@ -1,0 +1,27 @@
+###通过下面的配置启用所有的监控端点，默认情况下，这些端点是禁用的；
+management:
+  endpoints:
+    web:
+      exposure:
+        include:  "*"
+
+### mysql的用户名或密码输错，服务器启动的时候不会报错（因为底层采用懒加载机制）
+spring:
+  profiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/users?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: root
+
+####/actuator/info接口	查看自定义应用信息 例如下面定义的以info开头的信息
+info:
+  itmayiedu: yushengjun
+  addres: www.itmayiedu.com
+
+
+
+
+
+
